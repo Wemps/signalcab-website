@@ -5,6 +5,7 @@ import { LandingV2 } from "./components/LandingV2";
 import { Pricing } from "./components/Pricing";
 import { PricingWithClubTiers } from "./components/PricingWithClubTiers";
 import { FoundingClubs } from "./components/FoundingClubs";
+import { LandingBeta } from "./components/LandingBeta";
 
 export const router = createBrowserRouter([
   {
@@ -13,6 +14,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, Component: LandingV1 },
       { path: "v2", Component: LandingV2 },
+      { path: "home-beta", Component: LandingBeta },
       { path: "pricing", Component: Pricing },
       { path: "pricing-wclub", Component: PricingWithClubTiers },
       { path: "clubs", Component: FoundingClubs },

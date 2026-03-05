@@ -15,7 +15,6 @@ export const router = createBrowserRouter([
     children: [
       { index: true, Component: LandingBeta },
       { path: "pricing", Component: Pricing },
-      // { path: "pricing-wclub", Component: PricingWithClubTiers },
       { path: "clubs", Component: FoundingClubs },
       { path: "contact", Component: Contact },
       { path: "privacy", Component: Privacy },

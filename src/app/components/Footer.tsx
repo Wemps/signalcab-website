@@ -26,7 +26,7 @@ export function Footer() {
           <div>
             <h4 className="text-[#f3f4f6] mb-4" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: 14 }}>Support</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-[#6b7280] hover:text-[#00ffaa] transition-colors" style={{ fontFamily: 'Inter, sans-serif', fontSize: 14 }}>Contact</a></li>
+              <li><span onClick={() => navigate("/contact")} className="text-[#6b7280] hover:text-[#00ffaa] transition-colors cursor-pointer" style={{ fontFamily: 'Inter, sans-serif', fontSize: 14 }}>Contact</span></li>
               <li><a href="#" className="text-[#6b7280] hover:text-[#00ffaa] transition-colors" style={{ fontFamily: 'Inter, sans-serif', fontSize: 14 }}>Help Center</a></li>
             </ul>
           </div>

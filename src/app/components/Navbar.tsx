@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { Menu, X } from "lucide-react";
+import { Menu, X, TestTube } from "lucide-react";
+import { TESTFLIGHT_URL } from "../config";
 import logo from "figma:asset/b5f733e9f3a9a1b57f73caac2b271fc375e22b21.png";
 
 export function Navbar() {
@@ -21,12 +22,16 @@ export function Navbar() {
             <a href="/#how-it-works" className="text-[#9ca3af] hover:text-[#00ffaa] transition-colors" style={{ fontFamily: 'Inter, sans-serif' }}>How It Works</a>
             <a href="/#specs" className="text-[#9ca3af] hover:text-[#00ffaa] transition-colors" style={{ fontFamily: 'Inter, sans-serif' }}>Specs</a>
             <span className="cursor-pointer text-[#9ca3af] hover:text-[#00ffaa] transition-colors" style={{ fontFamily: 'Inter, sans-serif' }} onClick={() => navigate("/pricing")}>Pricing</span>
-            <button
-              className="bg-[#00ffaa] text-[#0a0f1a] px-6 py-2.5 rounded-xl hover:shadow-[0_0_24px_rgba(0,255,170,0.3)] transition-all active:translate-y-0.5"
+            <a
+              href={TESTFLIGHT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#9d5bff] text-white px-6 py-2.5 rounded-xl hover:shadow-[0_0_24px_rgba(157,91,255,0.4)] hover:brightness-110 transition-all active:translate-y-0.5"
               style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600 }}
             >
-              Download App
-            </button>
+              <TestTube size={16} />
+              Join Beta
+            </a>
           </div>
 
           {/* Mobile menu toggle */}
@@ -43,12 +48,16 @@ export function Navbar() {
           <a href="/#how-it-works" className="block text-[#9ca3af] hover:text-[#00ffaa] py-2" style={{ fontFamily: 'Inter, sans-serif' }} onClick={() => setMobileOpen(false)}>How It Works</a>
           <a href="/#specs" className="block text-[#9ca3af] hover:text-[#00ffaa] py-2" style={{ fontFamily: 'Inter, sans-serif' }} onClick={() => setMobileOpen(false)}>Specs</a>
           <span className="block text-[#9ca3af] hover:text-[#00ffaa] py-2 cursor-pointer" style={{ fontFamily: 'Inter, sans-serif' }} onClick={() => { setMobileOpen(false); navigate("/pricing"); }}>Pricing</span>
-          <button
-            className="w-full bg-[#00ffaa] text-[#0a0f1a] px-6 py-3 rounded-xl"
+          <a
+            href={TESTFLIGHT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 w-full bg-[#9d5bff] text-white px-6 py-3 rounded-xl hover:shadow-[0_0_24px_rgba(157,91,255,0.4)] hover:brightness-110 transition-all active:translate-y-0.5"
             style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600 }}
           >
-            Download App
-          </button>
+            <TestTube size={16} />
+            Join Beta
+          </a>
         </div>
       )}
     </nav>

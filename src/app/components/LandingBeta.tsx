@@ -1,11 +1,11 @@
-import { Train, Gauge, Wifi, Sliders, ChevronRight, Smartphone, Repeat, Lightbulb, OctagonX, ArrowRight, Star, Radio, Cpu, Power, Hash, Layers, SlidersHorizontal, CircuitBoard, Search, Grip, Link, ShieldCheck, Mic, Sparkles, FlaskConical, TestTube } from "lucide-react";
+import { Train, Gauge, Wifi, Sliders, ChevronDown, Repeat, Lightbulb, OctagonX, ArrowRight, Radio, Cpu, Power, Hash, Layers, SlidersHorizontal, CircuitBoard, Search, Grip, Link, ShieldCheck, Mic, Sparkles, TestTube } from "lucide-react";
 import { motion } from "motion/react";
 import { Footer } from "./Footer";
 import appIcon from "figma:asset/fcaaa15f3576d3bc1c1860ab3a3311ff14c9bdee.png";
 import locomotiveBg from "figma:asset/75387c7359bf2c155c3d45c432aeaa4d61ba76c7.png";
-import heroPhone from "figma:asset/2dc49ee224cdb04c4610e5a1e3a7138e071439c6.png";
+import heroPhone from "@/assets/hero-image.png";
 
-const TESTFLIGHT_URL = "https://testflight.apple.com/join/reCD7Tg7";
+import { TESTFLIGHT_URL } from "../config";
 
 const features = [
   {
@@ -83,7 +83,7 @@ export function LandingBeta() {
                   <div className="text-[#00ffaa]" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 20, letterSpacing: 2 }}>
                     SIGNAL CAB
                   </div>
-                  <div className="text-[#6b7280]" style={{ fontFamily: 'Inter, sans-serif', fontSize: 12 }}>DCC Locomotive Controller</div>
+                  <div className="text-[#6b7280]" style={{ fontFamily: 'Inter, sans-serif', fontSize: 12 }}>DCC Controller</div>
                 </div>
               </div>
 
@@ -138,40 +138,21 @@ export function LandingBeta() {
                   href={TESTFLIGHT_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-center gap-3 bg-[#00ffaa] text-[#0a0f1a] px-8 py-4 rounded-2xl shadow-[0_4px_24px_rgba(0,255,170,0.25)] hover:shadow-[0_4px_40px_rgba(0,255,170,0.4)] transition-all active:translate-y-0.5"
+                  className="group flex items-center justify-center gap-3 bg-[#9d5bff] text-white px-8 py-4 rounded-2xl shadow-[0_4px_24px_rgba(157,91,255,0.3)] hover:shadow-[0_4px_40px_rgba(157,91,255,0.5)] transition-all active:translate-y-0.5"
                   style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: 16 }}
                 >
                   <TestTube size={22} />
                   Join the Beta
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                 </a>
-                <button className="flex items-center justify-center gap-2 text-[#9ca3af] hover:text-[#f3f4f6] px-6 py-4 transition-colors"
+                <a href="#features" className="flex items-center justify-center gap-2 text-[#9ca3af] hover:text-[#f3f4f6] px-6 py-4 transition-colors"
                   style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize: 16 }}>
-                  Watch Demo
-                  <ChevronRight size={18} />
-                </button>
+                  Learn More
+                  <ChevronDown size={18} />
+                </a>
               </div>
 
-              {/* Social proof */}
-              <div className="mt-12 flex items-center gap-6">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-9 h-9 rounded-full bg-gradient-to-br from-[#1f2937] to-[#374151] border-2 border-[#0a0f1a] flex items-center justify-center">
-                      <span className="text-[#6b7280]" style={{ fontSize: 10, fontFamily: 'Inter, sans-serif', fontWeight: 600 }}>
-                        {["MR", "SL", "JT", "KW"][i - 1]}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-                <div>
-                  <div className="flex items-center gap-1">
-                    {[1, 2, 3, 4, 5].map((s) => (
-                      <Star key={s} size={14} className="text-[#f59e0b] fill-[#f59e0b]" />
-                    ))}
-                  </div>
-                  <div className="text-[#6b7280]" style={{ fontFamily: 'Inter, sans-serif', fontSize: 12 }}>Trusted by early beta testers</div>
-                </div>
-              </div>
+              {/* Social proof — hidden until real testimonials are available */}
             </motion.div>
 
             {/* App Preview */}
@@ -556,7 +537,7 @@ export function LandingBeta() {
               href={TESTFLIGHT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-[#00ffaa] text-[#0a0f1a] px-8 py-4 rounded-xl shadow-[0_4px_24px_rgba(0,255,170,0.25)] hover:shadow-[0_4px_32px_rgba(0,255,170,0.4)] transition-all active:translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 bg-[#9d5bff] text-white px-8 py-4 rounded-xl shadow-[0_4px_24px_rgba(157,91,255,0.3)] hover:shadow-[0_4px_32px_rgba(157,91,255,0.5)] transition-all active:translate-y-0.5"
               style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: 16 }}
             >
               <TestTube size={20} />

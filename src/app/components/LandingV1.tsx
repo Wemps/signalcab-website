@@ -81,7 +81,7 @@ export function LandingV1() {
                   <div className="text-[#00ffaa]" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 20, letterSpacing: 2 }}>
                     SIGNAL CAB
                   </div>
-                  <div className="text-[#6b7280]" style={{ fontFamily: 'Inter, sans-serif', fontSize: 12 }}>DCC Locomotive Controller</div>
+                  <div className="text-[#6b7280]" style={{ fontFamily: 'Inter, sans-serif', fontSize: 12 }}>DCC Controller</div>
                 </div>
               </div>
 

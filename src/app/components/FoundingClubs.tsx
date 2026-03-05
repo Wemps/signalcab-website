@@ -30,14 +30,14 @@ import heroPhone from "figma:asset/2dc49ee224cdb04c4610e5a1e3a7138e071439c6.png"
 const foundingBenefits = [
   {
     icon: Infinity,
-    title: "Unlimited Licenses",
-    text: "Every member gets full Signal Cab access — no headcount limits, no per-seat fees.",
+    title: "10 Lifetime Licenses",
+    text: "Your club receives 10 full Signal Cab licenses that work forever — completely free, no strings attached.",
     color: "#00ffaa",
   },
   {
     icon: Clock,
-    title: "Free for a Full Year",
-    text: "Your entire club runs free for 12 months. No credit card, no strings attached.",
+    title: "Discounted Additional Licenses",
+    text: "Need more than 10? After the program ends, founding clubs get exclusive discounted pricing on every additional license.",
     color: "#00d9ff",
   },
   {
@@ -102,24 +102,24 @@ const signalCabHighlights = [
 
 const clubFaqs = [
   {
-    q: "Who can apply?",
+    q: "Who can join?",
     a: "Any model railroad club — NMRA chapters, museum railroads, community groups, home-based ops clubs. We're looking for a mix of sizes and setups.",
   },
   {
     q: "How many clubs are you accepting?",
-    a: "A small founding cohort. Once we've filled the group, this program closes and club pricing moves to a paid tier. We'll update this page when spots are getting low.",
+    a: "A small founding cohort. Once we've filled the group, this program closes. We'll update this page when spots are getting low.",
   },
   {
-    q: "What does 'unlimited licenses' really mean?",
-    a: "Every member of your club gets their own full Signal Cab license — no feature gating, no shared logins. Add members anytime during the year.",
+    q: "What does '10 lifetime licenses' mean?",
+    a: "Your club receives 10 full Signal Cab licenses — no feature gating, no shared logins. Each license works forever at no cost, as a thank-you for participating.",
   },
   {
     q: "What's the time commitment?",
     a: "Minimal. Use Signal Cab during your normal operating sessions. We'll check in periodically via email or a short video call to hear how things are going.",
   },
   {
-    q: "What happens after the free year?",
-    a: "We'll offer founding clubs a discounted transition to our paid club tier (still being designed). You'll never be cut off without notice — we'll work with you.",
+    q: "Do the licenses ever expire?",
+    a: "No. The 10 licenses your club receives are free for life. They're yours to keep as a founding club benefit — no renewals, no future charges.",
   },
   {
     q: "What protocols does Signal Cab support?",
@@ -184,7 +184,7 @@ export function FoundingClubs() {
                     textTransform: "uppercase" as const,
                   }}
                 >
-                  Limited Pilot Program — Apply Now
+                  Limited Pilot Program — Join Now
                 </span>
               </motion.div>
 
@@ -206,7 +206,7 @@ export function FoundingClubs() {
                   className="text-[#00ffaa]"
                   style={{ fontSize: "clamp(32px, 4.5vw, 52px)" }}
                 >
-                  Free for a Year
+                  Free for Life
                 </span>
               </h1>
 
@@ -220,12 +220,12 @@ export function FoundingClubs() {
               >
                 We're hand-picking a small group of model railroad clubs to be
                 our founding partners. Deploy Signal Cab at your club, give us
-                real-world feedback, and every member runs free — no catches.
+                real-world feedback, and your club gets 10 lifetime licenses — completely free.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="mailto:clubs@signalcab.com?subject=Founding%20Club%20Application"
+                  href="mailto:clubs@signalcab.com?subject=Founding%20Club%20Inquiry"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl transition-all active:translate-y-0.5"
                   style={{
                     fontFamily: "Inter, sans-serif",
@@ -237,7 +237,7 @@ export function FoundingClubs() {
                   }}
                 >
                   <Mail size={18} />
-                  Apply for Your Club
+                  Join the Program
                   <ArrowRight size={16} />
                 </a>
                 <button
@@ -298,7 +298,7 @@ export function FoundingClubs() {
                       fontSize: 12,
                     }}
                   >
-                    DCC Locomotive Controller for iOS
+                    DCC Controller for iOS
                   </div>
                 </div>
               </div>
@@ -448,8 +448,8 @@ export function FoundingClubs() {
               }}
             >
               This isn't a beta test. Signal Cab is production-ready. We need
-              club-scale deployments to refine the multi-operator experience
-              before we build paid club tiers.
+              club-scale deployments to refine the multi-operator experience —
+              and we're rewarding participating clubs with 10 lifetime licenses.
             </p>
           </motion.div>
 
@@ -542,7 +542,7 @@ export function FoundingClubs() {
                           fontSize: 13,
                         }}
                       >
-                        Limited spots — applications reviewed on a rolling basis
+                        Limited spots — join while the program is open
                       </div>
                     </div>
                   </div>
@@ -564,7 +564,7 @@ export function FoundingClubs() {
                         fontSize: 16,
                       }}
                     >
-                      /year
+                      /forever
                     </span>
                   </div>
                 </div>
@@ -596,12 +596,12 @@ export function FoundingClubs() {
                     </div>
                     <ul className="space-y-3">
                       {[
-                        "Unlimited Signal Cab licenses for all members",
+                        "10 Signal Cab licenses — yours to keep forever",
                         "Full feature access — throttle, functions, consists, CV programming",
                         "All current and upcoming protocol support",
                         "Priority support channel with the dev team",
                         "Influence on the club features roadmap",
-                        "12-month term, renewable",
+                        "Licenses never expire — free for life",
                       ].map((item) => (
                         <li key={item} className="flex items-start gap-3">
                           <Check
@@ -683,11 +683,11 @@ export function FoundingClubs() {
                           className="text-[#a78bfa]"
                           style={{ fontWeight: 600 }}
                         >
-                          temporary program
-                        </span>{" "}
-                        while we build out club-specific features. Once our
-                        founding cohort is full, this offer closes and club
-                        pricing moves to a paid tier.
+                          limited-time program
+                        </span>
+                        . Once our founding cohort is full, this offer closes.
+                        Founding club licenses are free for life — join while
+                        spots are available.
                       </p>
                     </div>
                   </div>
@@ -910,7 +910,7 @@ export function FoundingClubs() {
             </p>
 
             <a
-              href="mailto:clubs@signalcab.com?subject=Founding%20Club%20Application"
+              href="mailto:clubs@signalcab.com?subject=Founding%20Club%20Inquiry"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl transition-all active:translate-y-0.5"
               style={{
                 fontFamily: "Inter, sans-serif",
@@ -922,7 +922,7 @@ export function FoundingClubs() {
               }}
             >
               <Mail size={18} />
-              clubs@signalcab.com
+              Join — clubs@signalcab.com
               <ArrowRight size={16} />
             </a>
           </motion.div>

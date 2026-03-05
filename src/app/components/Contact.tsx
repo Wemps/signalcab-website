@@ -151,38 +151,7 @@ export function Contact() {
                 </div>
               ))}
 
-              {/* GitHub link */}
-              <a
-                href="https://github.com/wemps"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 p-5 bg-[#111827] rounded-2xl border border-[#1f2937] hover:border-[#374151] transition-all group"
-              >
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center"
-                  style={{ backgroundColor: "#f3f4f615" }}
-                >
-                  <Github size={20} className="text-[#f3f4f6]" />
-                </div>
-                <div className="flex-1">
-                  <h4
-                    className="text-[#f3f4f6]"
-                    style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: 14 }}
-                  >
-                    Open an Issue on GitHub
-                  </h4>
-                  <p
-                    className="text-[#6b7280]"
-                    style={{ fontFamily: "Inter, sans-serif", fontSize: 12 }}
-                  >
-                    Bug reports & feature requests
-                  </p>
-                </div>
-                <ArrowRight
-                  size={16}
-                  className="text-[#4b5563] group-hover:text-[#00ffaa] group-hover:translate-x-1 transition-all"
-                />
-              </a>
+              {/* GitHub link — hidden for now */}
             </motion.div>
 
             {/* Contact Form */}

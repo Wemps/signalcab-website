@@ -20,21 +20,20 @@ export function Footer() {
               <li><a href="/#features" className="text-[#6b7280] hover:text-[#00ffaa] transition-colors" style={{ fontFamily: 'Inter, sans-serif', fontSize: 14 }}>Features</a></li>
               <li><a href="/#how-it-works" className="text-[#6b7280] hover:text-[#00ffaa] transition-colors" style={{ fontFamily: 'Inter, sans-serif', fontSize: 14 }}>How It Works</a></li>
               <li><a href="/#specs" className="text-[#6b7280] hover:text-[#00ffaa] transition-colors" style={{ fontFamily: 'Inter, sans-serif', fontSize: 14 }}>Specs</a></li>
-              <li><span onClick={() => navigate("/pricing")} className="text-[#6b7280] hover:text-[#00ffaa] transition-colors cursor-pointer" style={{ fontFamily: 'Inter, sans-serif', fontSize: 14 }}>Pricing</span></li>
+              <li><span onClick={() => { navigate("/pricing"); window.scrollTo({ top: 0 }); }} className="text-[#6b7280] hover:text-[#00ffaa] transition-colors cursor-pointer" style={{ fontFamily: 'Inter, sans-serif', fontSize: 14 }}>Pricing</span></li>
             </ul>
           </div>
           <div>
             <h4 className="text-[#f3f4f6] mb-4" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: 14 }}>Support</h4>
             <ul className="space-y-3">
-              <li><span onClick={() => navigate("/contact")} className="text-[#6b7280] hover:text-[#00ffaa] transition-colors cursor-pointer" style={{ fontFamily: 'Inter, sans-serif', fontSize: 14 }}>Contact</span></li>
-              <li><a href="#" className="text-[#6b7280] hover:text-[#00ffaa] transition-colors" style={{ fontFamily: 'Inter, sans-serif', fontSize: 14 }}>Help Center</a></li>
+              <li><span onClick={() => { navigate("/contact"); window.scrollTo({ top: 0 }); }} className="text-[#6b7280] hover:text-[#00ffaa] transition-colors cursor-pointer" style={{ fontFamily: 'Inter, sans-serif', fontSize: 14 }}>Contact</span></li>
             </ul>
           </div>
           <div>
             <h4 className="text-[#f3f4f6] mb-4" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: 14 }}>Legal</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-[#6b7280] hover:text-[#00ffaa] transition-colors" style={{ fontFamily: 'Inter, sans-serif', fontSize: 14 }}>Privacy</a></li>
-              <li><a href="#" className="text-[#6b7280] hover:text-[#00ffaa] transition-colors" style={{ fontFamily: 'Inter, sans-serif', fontSize: 14 }}>Terms</a></li>
+              <li><span onClick={() => { navigate("/privacy"); window.scrollTo({ top: 0 }); }} className="text-[#6b7280] hover:text-[#00ffaa] transition-colors cursor-pointer" style={{ fontFamily: 'Inter, sans-serif', fontSize: 14 }}>Privacy</span></li>
+              <li><span onClick={() => { navigate("/terms"); window.scrollTo({ top: 0 }); }} className="text-[#6b7280] hover:text-[#00ffaa] transition-colors cursor-pointer" style={{ fontFamily: 'Inter, sans-serif', fontSize: 14 }}>Terms</span></li>
             </ul>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
-import { Check, Star, Users, Ticket, Crown, Zap, ArrowRight, Apple } from "lucide-react";
+import { Check, Star, Users, Ticket, Crown, Zap, ArrowRight, Apple, TestTube } from "lucide-react";
+import { TESTFLIGHT_URL } from "../config";
 
 const plans = [
   {
@@ -298,7 +299,7 @@ export function PricingCards() {
                   </ul>
 
                   {/* CTA — anchored to bottom */}
-                  <button
+                  {/* <button
                     className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl transition-all active:translate-y-0.5 mt-auto"
                     style={{
                       fontFamily: "Inter, sans-serif",
@@ -319,7 +320,25 @@ export function PricingCards() {
                     )}
                     {plan.cta}
                     <ArrowRight size={14} />
-                  </button>
+                  </button> */}
+                  <a
+                    href={TESTFLIGHT_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl transition-all active:translate-y-0.5 mt-auto"
+                    style={{
+                      fontFamily: "Inter, sans-serif",
+                      fontWeight: 600,
+                      fontSize: 15,
+                      backgroundColor: "#9d5bff",
+                      color: "#fff",
+                      boxShadow: "0 4px 20px rgba(157, 91, 255, 0.3)",
+                    }}
+                  >
+                    <TestTube size={16} />
+                    Join Free Beta
+                    <ArrowRight size={14} />
+                  </a>
                 </div>
               </div>
             </motion.div>

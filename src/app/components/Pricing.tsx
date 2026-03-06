@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { motion } from "motion/react";
-import { Check, Users, Ticket, ArrowRight, Apple, Mail, ChevronDown, ChevronUp, Shield, Clock, Sparkles, Infinity } from "lucide-react";
+import { Check, Users, Ticket, ArrowRight, Apple, Mail, ChevronDown, ChevronUp, Shield, Clock, Sparkles, Infinity, TestTube } from "lucide-react";
+import { TESTFLIGHT_URL } from "../config";
 import { Footer } from "./Footer";
 import { PricingCards } from "./PricingCards";
 
@@ -74,7 +75,7 @@ export function Pricing() {
               </span>
             </h1>
             <p className="text-[#9ca3af] max-w-xl mx-auto" style={{ fontFamily: 'Inter, sans-serif', fontSize: 18, lineHeight: 1.7 }}>
-              Every ticket unlocks the full Signal Cab experience. No feature gating, no upsells — just choose the plan that fits.
+              Signal Cab is <span className="text-[#00ffaa]" style={{ fontWeight: 600 }}>completely free during beta</span> — join via TestFlight and get full access at no cost. The tiers below reflect our planned pricing at launch.
             </p>
           </motion.div>
         </div>
@@ -334,19 +335,37 @@ export function Pricing() {
             viewport={{ once: true }}
           >
             <h2 className="text-[#f9fafb] mb-3" style={{ fontFamily: 'Lora, serif', fontSize: 'clamp(24px, 3.5vw, 36px)', fontWeight: 700 }}>
-              Try Signal Cab free for a week
+              Free During Beta
             </h2>
             <p className="text-[#6b7280] mb-8" style={{ fontFamily: 'Inter, sans-serif', fontSize: 16, lineHeight: 1.7 }}>
-              Start your free trial today. Full access, no credit card required upfront.
+              Join via TestFlight and get full access to every feature at no cost while we're in beta. No credit card, no commitment.
             </p>
-            <button
+            {/* <button
               className="inline-flex items-center gap-2 bg-[#00ffaa] text-[#0a0f1a] px-8 py-4 rounded-xl shadow-[0_4px_24px_rgba(0,255,170,0.25)] hover:shadow-[0_4px_32px_rgba(0,255,170,0.4)] transition-all active:translate-y-0.5"
               style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: 16 }}
             >
               <Apple size={20} />
               Download on the App Store
               <ArrowRight size={16} />
-            </button>
+            </button> */}
+            <a
+              href={TESTFLIGHT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl transition-all active:translate-y-0.5"
+              style={{
+                fontFamily: 'Inter, sans-serif',
+                fontWeight: 600,
+                fontSize: 16,
+                backgroundColor: "#9d5bff",
+                color: "#fff",
+                boxShadow: "0 4px 24px rgba(157, 91, 255, 0.3)",
+              }}
+            >
+              <TestTube size={20} />
+              Join Free Beta
+              <ArrowRight size={16} />
+            </a>
           </motion.div>
         </div>
       </section>

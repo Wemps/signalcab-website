@@ -1,4 +1,4 @@
-import { Train, Gauge, Wifi, Sliders, Zap, Shield, ChevronRight, Apple, Smartphone, Repeat, Lightbulb, OctagonX, ArrowRight, Star, Radio, Cpu, Power, Hash, Layers, SlidersHorizontal, Users, CircuitBoard, Vibrate, Volume2, Search, Grip, Link, ShieldCheck, Mic, Sparkles } from "lucide-react";
+import { Train, Gauge, Wifi, Sliders, Zap, Shield, ChevronRight, Apple, Smartphone, Repeat, Lightbulb, OctagonX, ArrowRight, Star, Radio, Cpu, Layers, Users, CircuitBoard, Vibrate, Volume2, Search, Grip, Link, ShieldCheck, Mic, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 import { Footer } from "./Footer";
 import appIcon from "figma:asset/fcaaa15f3576d3bc1c1860ab3a3311ff14c9bdee.png";
@@ -9,19 +9,19 @@ const features = [
   {
     icon: Grip,
     title: "Multi-Throttle",
-    description: "Control multiple locomotives with a swipeable carousel. Quick-switch between active locos without missing a beat.",
+    description: "Control multiple locomotives with a swipeable carousel. Quick-switch between active locos without missing a beat. Full 128 speed step resolution for smooth, precise control.",
     color: "#00d9ff",
   },
   {
     icon: Train,
     title: "Locomotive Library",
-    description: "Full roster management with search, favorites, and group organization. Import from other popular DCC apps like DCC-EX.",
+    description: "Full roster management with search, favorites, and group organization. Supports short (1–127) and long (128–10293) DCC addresses. Import from other popular DCC apps like DCC-EX.",
     color: "#00ffaa",
   },
   {
     icon: Sliders,
     title: "Function Library",
-    description: "Guided setup flows walk you through every function. Decoder defaults for SoundTraxx, Digitrax, and NMRA built in — plus fully customizable labels, icons, and colors to build your own.",
+    description: "Guided setup flows walk you through every function — F0 through F28, with support for both momentary and latching modes. Decoder defaults for SoundTraxx, Digitrax, and NMRA built in — plus fully customizable labels, icons, and colors to build your own.",
     color: "#a78bfa",
   },
   {
@@ -38,8 +38,8 @@ const features = [
   },
   {
     icon: ShieldCheck,
-    title: "Configurable Safety",
-    description: "Choose your E-Stop behavior: stop your trains, stop all, or cut power. Address conflict detection and app-close safety options.",
+    title: "Safety & Layout Control",
+    description: "You decide how Signal Cab protects your layout. Configure E-Stop behavior, manage main and programming track power, and set what happens when you close the app. DCC address conflict detection keeps your roster clean.",
     color: "#ef4444",
   },
 ];
@@ -395,39 +395,6 @@ export function LandingV1() {
               ))}
             </div>
           </motion.div>
-
-          {/* Technical Capabilities Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-12">
-            {[
-              { icon: Hash, value: "1–10293", label: "DCC Addresses", sub: "Short & long addressing", color: "#00ffaa" },
-              { icon: SlidersHorizontal, value: "F0–F28", label: "Function Range", sub: "Momentary & latching", color: "#a78bfa" },
-              { icon: Power, value: "Track Power", label: "Power Control", sub: "Main & prog tracks", color: "#ef4444" },
-              { icon: Gauge, value: "128", label: "Speed Steps", sub: "Smooth resolution", color: "#00d9ff" },
-            ].map((spec, i) => (
-              <motion.div
-                key={spec.label}
-                className="bg-[#111827] rounded-2xl border border-[#1f2937] p-5 text-center hover:border-[#374151] transition-all"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-              >
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center mx-auto mb-3"
-                  style={{ backgroundColor: `${spec.color}12` }}>
-                  <spec.icon size={18} style={{ color: spec.color }} />
-                </div>
-                <div className="mb-1" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 22, color: spec.color }}>
-                  {spec.value}
-                </div>
-                <div className="text-[#f3f4f6] mb-0.5" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: 13 }}>
-                  {spec.label}
-                </div>
-                <div className="text-[#6b7280]" style={{ fontFamily: 'Inter, sans-serif', fontSize: 11 }}>
-                  {spec.sub}
-                </div>
-              </motion.div>
-            ))}
-          </div>
 
           {/* Deep Technical Detail Cards */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

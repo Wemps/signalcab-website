@@ -1,9 +1,12 @@
-import { Train, Gauge, Wifi, Sliders, ChevronDown, Repeat, Lightbulb, OctagonX, ArrowRight, Radio, Cpu, Power, Hash, Layers, SlidersHorizontal, CircuitBoard, Search, Grip, Link, ShieldCheck, Mic, Sparkles, TestTube } from "lucide-react";
+import { Train, Gauge, Wifi, Sliders, ChevronDown, Repeat, Lightbulb, OctagonX, ArrowRight, Radio, Cpu, CircuitBoard, Search, Grip, Link, ShieldCheck, ShieldAlert, Mic, Sparkles, TestTube, Download, RefreshCw } from "lucide-react";
 import { motion } from "motion/react";
 import { Footer } from "./Footer";
 import appIcon from "figma:asset/fcaaa15f3576d3bc1c1860ab3a3311ff14c9bdee.png";
 import locomotiveBg from "figma:asset/75387c7359bf2c155c3d45c432aeaa4d61ba76c7.png";
 import heroPhone from "@/assets/hero-image.png";
+import heroWelcome from "@/assets/white-hero-welcome.png";
+import heroAdd from "@/assets/white-hero-create.png";
+import heroThrottle from "@/assets/white-hero-throttle.png";
 
 import { TESTFLIGHT_URL } from "../config";
 
@@ -11,19 +14,19 @@ const features = [
   {
     icon: Grip,
     title: "Multi-Throttle",
-    description: "Control multiple locomotives with a swipeable carousel. Quick-switch between active locos without missing a beat.",
+    description: "Control multiple locomotives with a swipeable carousel. Quick-switch between active locos without missing a beat. Full 128 speed step resolution for smooth, precise control.",
     color: "#00d9ff",
   },
   {
     icon: Train,
     title: "Locomotive Library",
-    description: "Full roster management with search, favorites, and group organization. Import from other popular DCC apps like DCC-EX.",
+    description: "Full roster management with search, favorites, and group organization. Supports short (1–127) and long (128–10293) DCC addresses. Import from other popular DCC apps like DCC-EX.",
     color: "#00ffaa",
   },
   {
     icon: Sliders,
     title: "Function Library",
-    description: "Guided setup flows walk you through every function. Decoder defaults for SoundTraxx, Digitrax, and NMRA built in — plus fully customizable labels, icons, and colors to build your own.",
+    description: "Guided setup flows walk you through every function — F0 through F28, with support for both momentary and latching modes. Decoder defaults for SoundTraxx, Digitrax, and NMRA built in — plus fully customizable labels, icons, and colors to build your own.",
     color: "#a78bfa",
   },
   {
@@ -40,9 +43,28 @@ const features = [
   },
   {
     icon: ShieldCheck,
-    title: "Configurable Safety",
-    description: "Choose your E-Stop behavior: stop your trains, stop all, or cut power. Address conflict detection and app-close safety options.",
+    title: "Safety & Layout Control",
+    description: "You decide how Signal Cab protects your layout. Configure E-Stop behavior, manage main and programming track power, and set what happens when you close the app. DCC address conflict detection keeps your roster clean.",
     color: "#ef4444",
+  },
+  {
+    icon: Cpu,
+    title: "CV Programming",
+    badge: "Beta",
+    description: "Read and write configuration variables on the programming track — no separate programmer needed. Includes a visual speed curve editor with CV2–6 and full 28-point speed table support to fine-tune acceleration, deceleration, and trim to match your prototype.",
+    color: "#f59e0b",
+  },
+  {
+    icon: Mic,
+    title: "Siri & App Shortcuts",
+    description: "Trigger actions from Siri, Spotlight, or the Action Button. Open your library, fire an emergency stop, or launch a specific loco — hands-free.",
+    color: "#00ffaa",
+  },
+  {
+    icon: Download,
+    title: "Roster Import",
+    description: "Bring your existing fleet with you. Import locomotive rosters from DCC-EX and JMRI today, with DigiTrains Pro support coming soon — no re-entering your collection from scratch.",
+    color: "#00d9ff",
   },
 ];
 
@@ -273,9 +295,24 @@ export function LandingBeta() {
                 >
                   <feature.icon size={24} style={{ color: feature.color }} />
                 </div>
-                <h3 className="text-[#f3f4f6] mb-2" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: 18 }}>
-                  {feature.title}
-                </h3>
+                <div className="flex items-center gap-2 mb-2">
+                  <h3 className="text-[#f3f4f6]" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: 18 }}>
+                    {feature.title}
+                  </h3>
+                  {feature.badge && (
+                    <span style={{
+                      fontFamily: 'Space Grotesk, sans-serif',
+                      fontWeight: 600,
+                      fontSize: 10,
+                      letterSpacing: 0.5,
+                      color: feature.color,
+                      backgroundColor: `${feature.color}15`,
+                      border: `1px solid ${feature.color}30`,
+                      padding: '2px 8px',
+                      borderRadius: 999,
+                    }}>{feature.badge}</span>
+                  )}
+                </div>
                 <p className="text-[#6b7280]" style={{ fontFamily: 'Inter, sans-serif', fontSize: 14, lineHeight: 1.7 }}>
                   {feature.description}
                 </p>
@@ -286,7 +323,7 @@ export function LandingBeta() {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="py-16 sm:py-24 bg-[#0a0f1a]">
+      <section id="how-it-works" className="pt-16 sm:pt-24 pb-0 bg-[#0a0f1a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-12 sm:mb-16"
@@ -297,6 +334,9 @@ export function LandingBeta() {
             <h2 className="text-[#f9fafb] mb-4" style={{ fontFamily: 'Lora, serif', fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 700 }}>
               Up and Running in <span className="text-[#00d9ff]">Minutes</span>
             </h2>
+            <p className="text-[#6b7280] max-w-2xl mx-auto" style={{ fontFamily: 'Inter, sans-serif', fontSize: 16, lineHeight: 1.7 }}>
+              No manuals, no complicated setup. Connect to your command station, add your locomotives, and drive — Signal Cab gets out of your way so you can focus on running your railroad.
+            </p>
           </motion.div>
 
           <div className="grid sm:grid-cols-3 gap-8">
@@ -321,11 +361,31 @@ export function LandingBeta() {
               </motion.div>
             ))}
           </div>
+
+          {/* Step screenshots */}
+          <div className="grid sm:grid-cols-3 gap-8 mt-16 mb-[-91px]">
+            {[heroWelcome, heroAdd, heroThrottle].map((img, i) => (
+              <motion.div
+                key={i}
+                className="flex justify-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.12 }}
+              >
+                <img
+                  src={img}
+                  alt=""
+                  className="w-[300px] rounded-t-3xl shadow-2xl"
+                />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Built for Reliability — Engineering Section */}
-      <section id="specs" className="py-16 sm:py-24 bg-[#0d1117] relative overflow-hidden">
+      <section id="specs" className="py-16 sm:py-24 bg-[#0d1117] relative z-10 overflow-hidden">
         {/* Decorative glow */}
         <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[400px] h-[400px] bg-[#a78bfa]/5 rounded-full blur-[150px]" />
         <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-[#00ffaa]/5 rounded-full blur-[120px]" />
@@ -337,9 +397,6 @@ export function LandingBeta() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <p className="text-[#a78bfa] mb-3" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: 13, letterSpacing: 2, textTransform: 'uppercase' }}>
-              Engineering
-            </p>
             <h2 className="text-[#f9fafb] mb-4" style={{ fontFamily: 'Lora, serif', fontSize: 'clamp(28px, 4vw, 40px)', fontWeight: 700 }}>
               Built for <span className="text-[#a78bfa]">Reliability</span>
             </h2>
@@ -420,100 +477,58 @@ export function LandingBeta() {
             </div>
           </motion.div>
 
-          {/* Technical Capabilities Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-12">
-            {[
-              { icon: Hash, value: "1\u201310293", label: "DCC Addresses", sub: "Short & long addressing", color: "#00ffaa" },
-              { icon: SlidersHorizontal, value: "F0\u2013F28", label: "Function Range", sub: "Momentary & latching", color: "#a78bfa" },
-              { icon: Power, value: "Track Power", label: "Power Control", sub: "Main & prog tracks", color: "#ef4444" },
-              { icon: Gauge, value: "128", label: "Speed Steps", sub: "Smooth resolution", color: "#00d9ff" },
-            ].map((spec, i) => (
-              <motion.div
-                key={spec.label}
-                className="bg-[#111827] rounded-2xl border border-[#1f2937] p-5 text-center hover:border-[#374151] transition-all"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-              >
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center mx-auto mb-3"
-                  style={{ backgroundColor: `${spec.color}12` }}>
-                  <spec.icon size={18} style={{ color: spec.color }} />
-                </div>
-                <div className="mb-1" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, fontSize: 22, color: spec.color }}>
-                  {spec.value}
-                </div>
-                <div className="text-[#f3f4f6] mb-0.5" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: 13 }}>
-                  {spec.label}
-                </div>
-                <div className="text-[#6b7280]" style={{ fontFamily: 'Inter, sans-serif', fontSize: 11 }}>
-                  {spec.sub}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Deep Technical Detail Cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "mDNS Auto-Discovery",
-                desc: "Automatic detection of command stations on your local network. No manual IP configuration \u2014 just connect to WiFi and Signal Cab finds your station.",
-                color: "#00ffaa",
-                icon: Search,
-              },
-              {
-                title: "Auto-Reconnect",
-                desc: "Lost connection? Signal Cab reconnects with exponential backoff and a configurable resume window (10\u201360 min) to pick up right where you left off.",
-                color: "#00d9ff",
-                icon: Wifi,
-              },
-              {
-                title: "Speed Curve Editor",
-                desc: "Edit CV2\u20136 and full 28-point speed tables with visual presets. Fine-tune acceleration, deceleration, and trim to match your prototype\u2019s characteristics.",
-                color: "#a78bfa",
-                icon: Sliders,
-              },
-              {
-                title: "CV Programming",
-                desc: "Read and write configuration variables on the programming track. Full decoder setup without needing a separate programmer or computer.",
-                color: "#f59e0b",
-                icon: Cpu,
-              },
-              {
-                title: "Decoder Templates",
-                desc: "Prebuilt function maps for SoundTraxx, Digitrax, and NMRA defaults. Or use the guided setup wizard to map functions step-by-step.",
-                color: "#00d9ff",
-                icon: Layers,
-              },
-              {
-                title: "Siri & App Shortcuts",
-                desc: "Trigger actions from Siri, Spotlight, or the Action Button. Open your library, fire an emergency stop, or launch a specific loco \u2014 hands-free.",
-                color: "#00ffaa",
-                icon: Mic,
-              },
-            ].map((card, i) => (
-              <motion.div
-                key={card.title}
-                className="p-6 bg-[#111827] rounded-2xl border border-[#1f2937] hover:border-[#374151] transition-all"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-              >
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
-                  style={{ backgroundColor: `${card.color}15` }}>
-                  <card.icon size={20} style={{ color: card.color }} />
-                </div>
-                <h3 className="text-[#f3f4f6] mb-2" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, fontSize: 16 }}>
-                  {card.title}
-                </h3>
-                <p className="text-[#6b7280]" style={{ fontFamily: 'Inter, sans-serif', fontSize: 13, lineHeight: 1.7 }}>
-                  {card.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+          {/* No Frustration */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-[#9ca3af] text-center mb-6" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 600, fontSize: 13, letterSpacing: 2, textTransform: 'uppercase' }}>
+              No Frustration
+            </h3>
+            <div className="grid sm:grid-cols-3 gap-4 sm:gap-6">
+              {[
+                {
+                  title: "Command Station Discovery",
+                  desc: "Signal Cab automatically finds your command station on the local network via mDNS. No IP addresses to enter, no manual setup — just connect to WiFi and go.",
+                  color: "#00ffaa",
+                  icon: Search,
+                },
+                {
+                  title: "Auto-Reconnect",
+                  desc: "Lost connection? Signal Cab reconnects automatically with exponential backoff and a configurable resume window (10–60 min) to pick up right where you left off.",
+                  color: "#00d9ff",
+                  icon: RefreshCw,
+                },
+                {
+                  title: "Collision Prevention",
+                  desc: "Signal Cab detects when two locomotives share the same DCC address before they go into service — critical for club sessions where operators bring their own equipment.",
+                  color: "#f59e0b",
+                  icon: ShieldAlert,
+                },
+              ].map((card, i) => (
+                <motion.div
+                  key={card.title}
+                  className="p-6 bg-[#111827] rounded-2xl border border-[#1f2937] hover:border-[#374151] transition-all"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
+                    style={{ backgroundColor: `${card.color}15` }}>
+                    <card.icon size={20} style={{ color: card.color }} />
+                  </div>
+                  <h3 className="text-[#f3f4f6] mb-2" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 600, fontSize: 18 }}>
+                    {card.title}
+                  </h3>
+                  <p className="text-[#6b7280]" style={{ fontFamily: 'Inter, sans-serif', fontSize: 13, lineHeight: 1.7 }}>
+                    {card.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 

@@ -1,4 +1,4 @@
-import { Train, Gauge, Wifi, Sliders, ChevronDown, Repeat, Lightbulb, OctagonX, ArrowRight, Radio, Cpu, CircuitBoard, Search, Grip, Link, ShieldCheck, ShieldAlert, Mic, Sparkles, TestTube, Download, RefreshCw } from "lucide-react";
+import { Train, Gauge, Wifi, Sliders, ChevronDown, Repeat, Lightbulb, OctagonX, ArrowRight, Radio, Cpu, CircuitBoard, Search, Grip, Link, ShieldCheck, ShieldAlert, Mic, Sparkles, TestTube, Download, RefreshCw, Baby } from "lucide-react";
 import { motion } from "motion/react";
 import { Footer } from "./Footer";
 import appIcon from "figma:asset/fcaaa15f3576d3bc1c1860ab3a3311ff14c9bdee.png";
@@ -38,8 +38,14 @@ const features = [
   {
     icon: Sparkles,
     title: "Modern Apple Design",
-    description: "Built with modern design principles for a fast, intuitive experience. Tactile haptic feedback on the throttle, Siri commands, App Shortcuts, and customizable iPhone Action Button support.",
+    description: "Built with modern iOS design principles for a fast, intuitive experience. Tactile haptic feedback keeps you in sync with every speed change. Siri commands, App Shortcuts, and Spotlight integration let you open your library, trigger an E-Stop, or launch a specific locomotive — hands-free. Customizable iPhone Action Button support included.",
     color: "#f59e0b",
+  },
+  {
+    icon: Baby,
+    title: "Kid Mode",
+    description: "Let the next generation take the throttle — safely. Kid Mode caps the maximum speed, restricts access to sensitive functions, and locks the throttle screen so young engineers can't accidentally navigate away or shut down a locomotive mid-run.",
+    color: "#f97316",
   },
   {
     icon: ShieldCheck,
@@ -53,12 +59,6 @@ const features = [
     badge: "Beta",
     description: "Read and write configuration variables on the programming track — no separate programmer needed. Includes a visual speed curve editor with CV2–6 and full 28-point speed table support to fine-tune acceleration, deceleration, and trim to match your prototype.",
     color: "#f59e0b",
-  },
-  {
-    icon: Mic,
-    title: "Siri & App Shortcuts",
-    description: "Trigger actions from Siri, Spotlight, or the Action Button. Open your library, fire an emergency stop, or launch a specific loco — hands-free.",
-    color: "#00ffaa",
   },
   {
     icon: Download,
